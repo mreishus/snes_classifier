@@ -1,0 +1,2 @@
+ffmpeg -i 'SNES Longplay [050] Super Metroid-2mHYOzLh19E.mkv' -r 0.01 -f image2 output_%05d.jpg
+
