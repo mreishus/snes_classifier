@@ -52,7 +52,7 @@ defmodule FileParser do
     |> String.replace(~r/Super Punch Out!!/i, "Super Punch Out")
     |> String.replace(~r/Zombies Ate My Neighbours/i, "Zombies Ate My Neighbors")
     |> String.replace(
-      ~r/eenage Mutant Ninja Turtles 4 - Turtles In Time/i,
+      ~r/Teenage Mutant Ninja Turtles 4 - Turtles In Time/i,
       "Teenage Mutant Ninja Turtles IV: Turtles in Time"
     )
     |> String.replace(~r/Ghost Chaser Densei - Denjin Makai/i, "Ghost Chaser Densei")
@@ -63,6 +63,15 @@ defmodule FileParser do
       "Iron Commando - Koutetsu no Senshi"
     )
     |> String.trim()
+    |> slugify()
+  end
+
+  def slugify(title) do
+    title
+    |> String.downcase()
+    |> String.replace(~r/[^a-zA-Z0-9]/, "-")
+    |> String.replace(~r/-+/, "-")
+    |> String.replace(~r/(^-|-$)/, "")
   end
 
   def group_title(games) do

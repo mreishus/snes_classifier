@@ -1,0 +1,5 @@
+%{
+  "component": {:hex, :component, "0.2.5", "a7226ae5cfe721b704219d1d509ffa5578ec332595a4f3290360f3a3e22aae1d", [:mix], [{:poolboy, ">= 0.0.0", [hex: :poolboy, repo: "hexpm", optional: false]}, {:statix, ">= 1.0.0", [hex: :statix, repo: "hexpm", optional: false]}], "hexpm"},
+  "poolboy": {:hex, :poolboy, "1.5.2", "392b007a1693a64540cead79830443abf5762f5d30cf50bc95cb2c1aaafa006b", [:rebar3], [], "hexpm"},
+  "statix": {:hex, :statix, "1.1.0", "af9a4586c5cd58f879e0595f06a4790878715de5b8f75f6346693aaa38da2424", [:mix], [], "hexpm"},
+}
