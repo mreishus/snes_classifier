@@ -1,9 +1,9 @@
-defmodule Runner.MixProject do
+defmodule BlankDeleter.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :runner,
+      app: :blank_deleter,
       version: "0.1.0",
       elixir: "~> 1.8",
       start_permanent: Mix.env() == :prod,
@@ -21,11 +21,7 @@ defmodule Runner.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:component, "~> 0.2.5"},
-      {:dir_walker, "~> 0.0.8"},
-      {:video_downloader, path: "../video_downloader"},
-      {:screenshot_taker, path: "../screenshot_taker"},
-      {:blank_deleter, path: "../blank_deleter"}
+      {:component, "~> 0.2.5"}
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
     ]

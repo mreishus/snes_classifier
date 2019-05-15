@@ -8,10 +8,18 @@ dupes = [
   {'mighty-morphin-power-rangers-the-movie', 'power-rangers-the-movie'},
   {'puzzle-bobble-bust-a-move', 'bust-a-move'},
   {'castlevania-dracula-x', 'akumajou-dracula-xx'},
+  {'castlevania-dracula-x', 'vampire-kiss'},
   {'kendo-rage', 'makeruna-makendou'},
   {'sd-the-great-battle', 'sd-the-great-battle-aratanaru-chousen'},
   {'euro-football-champ', 'hat-trick-hero'},
-  {'cyber-spin', 'shinseiki-gpx-cyber-formula'}
+  {'cyber-spin', 'shinseiki-gpx-cyber-formula'},
+  {'legend-of-zelda-a-link-to-the-past', 'the-legend-of-zelda-a-link-to-the-past'},
+  {'super-ghouls-n-ghosts', 'choh-makaimura'},
+  {'the-lawnmower-man', 'virtual-wars'},
+  {'spider-man-venom-maximum-carnage', 'maximum-carnage'},
+  {'clay-fighter', 'clayfighter-tournament-edition'},
+  {'contra-iii-the-alien-wars', 'super-probotector-alien-rebels'},
+  {'super-valis-iv', 'super-valis-akaki-tsuki-no-otome'}
 ]
 
 defmodule Dupe do

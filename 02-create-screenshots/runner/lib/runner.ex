@@ -19,8 +19,22 @@ defmodule Runner do
     |> ScreenshotTaker.consume(timeout: 29_000_000)
   end
 
+  def delete_black_frames do
+    IO.puts("Scanning")
+
+    get_screenshot_path
+    |> DirWalker.stream()
+    |> BlankDeleter.consume()
+
+    IO.puts("Done")
+  end
+
   defp get_data_path do
     Path.expand("../../data/")
+  end
+
+  defp get_screenshot_path do
+    Path.expand("../../data/screenshots")
   end
 
   defp get_vids do
