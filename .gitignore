@@ -2,3 +2,6 @@ tmp
 data/videos
 data/screenshots
 data/screenshots-bak
+model-resnet34/export.pkl
+model-resnet50/export.pkl
+
