@@ -2,7 +2,7 @@ defmodule Runner do
   # use Component.Strategy.Dynamic, top_level: true
 
   def download_vids do
-    data_path = get_path()
+    data_path = get_data_path()
 
     get_vids()
     |> Enum.map(fn x -> Map.put(x, :data_path, data_path) end)
@@ -10,11 +10,20 @@ defmodule Runner do
     |> VideoDownloader.consume(timeout: 18_000_000)
   end
 
-  def get_path do
+  def make_screenshots do
+    data_path = get_data_path()
+
+    Path.join([data_path, "videos", "*"])
+    |> Path.wildcard()
+    |> Enum.filter(&File.dir?/1)
+    |> ScreenshotTaker.consume(timeout: 29_000_000)
+  end
+
+  defp get_data_path do
     Path.expand("../../data/")
   end
 
-  def get_vids do
+  defp get_vids do
     Term.fetch("../../01-find-longplay-urls/parsed-snes-longplay-vids.bin")
   end
 end
