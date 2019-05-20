@@ -1,0 +1,27 @@
+- name: install docker-compose
+  apt:
+    pkg: docker-compose
+    state: present
+    cache_valid_time: 3600
+    update_cache: yes
+
+- name: Git clone docker-snes-classifier
+  git:
+    repo: 'https://github.com/mreishus/snes_classifier'
+    dest: /usr/local/src/snes_classifier
+    force: yes
+
+- name: Install systemd service definition
+  copy:
+    src: docker-snes-classifier.service
+    dest: /etc/systemd/system/docker-snes-classifier.service
+    mode: 0644
+    owner: root
+    group: root
+
+- name: keep docker-snes-classifier running
+  systemd:
+    state: started
+    enabled: yes
+    name: docker-snes-classifier
+    daemon_reload: yes

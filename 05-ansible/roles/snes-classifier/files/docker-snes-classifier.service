@@ -1,0 +1,22 @@
+[Unit]
+Description=docker-snes-classifier, webapp on 8080
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=always
+
+WorkingDirectory=/usr/local/src/snes_classifier/04-web
+
+ExecStartPre=/usr/bin/docker-compose down
+ExecStartPre=/usr/bin/docker-compose pull
+
+# Compose up
+ExecStart=/usr/bin/docker-compose up
+
+# Compose down, remove containers and volumes
+ExecStop=/usr/bin/docker-compose down
+
+[Install]
+WantedBy=multi-user.target
+
