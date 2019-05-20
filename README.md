@@ -1,2 +1,11 @@
-Goal is to create a Neural net to classify SNES games by screenshot.
-Most difficult part is data collection.
+# Docs Under construction
+
+Documentation is forthcoming.
+
+# See it Now
+
+https://snes.matthewreishus.com/
+
+# Explanation
+
+A Neural net to classify SNES games by screenshot.
