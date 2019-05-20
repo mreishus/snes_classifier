@@ -11,5 +11,6 @@ services:
         build: ./backend/
         restart: always
         ports:
-          - 8000:8000
+#          - 8000:8000
 # 8000:8000 Can be commented out when dev is done
+# Uncomment if you want to test the backend directly
