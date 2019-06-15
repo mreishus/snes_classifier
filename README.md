@@ -4,7 +4,7 @@ In the online class [Practical Deep Learning for Coders 2019](https://www.fast.a
 
 I wondered if I could use the same techniques to create **a model that could examine a video game screenshot and determine which of ~600 Super Nintendo games it belonged to**.  Would 600 categories be too much?  Would transfer learning from ImageNet work on game screenshots which don't even exist in the real world?
 
-It ended up working surprisingly well, with an accuracy of 94%.  This repository contains:
+It ended up working surprisingly well, with an accuracy of 95.8%.  This repository contains:
   * All of the scripts I used to collect the training data from youtube
   * The notebooks I used to create the model
   * My trained model
