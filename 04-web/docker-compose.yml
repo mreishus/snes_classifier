@@ -3,13 +3,13 @@ version: '3'
 services:
     frontend:
         build: ./frontend/
-        restart: always
+        restart: 'no'
         ports:
           - 8080:80
 
     backend:
         build: ./backend/
-        restart: always
+        restart: 'no'
 #        ports:
 #          - 8000:8000
 # 8000:8000 Can be commented out when dev is done
