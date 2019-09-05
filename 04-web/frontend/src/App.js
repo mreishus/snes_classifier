@@ -14,7 +14,6 @@ function App() {
         Given a screenshot of any Super Nintendo game, this model will guess
         which game it belongs to. <br />
         Does poorly with title screens or endings. <br />
-        Larger writeup forthcoming. <br />
       </div>
       <Dropzone setPredictions={setPredictions} />
       <Results predictions={predictions} />
