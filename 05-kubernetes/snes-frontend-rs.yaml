@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: snes-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: snes
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        app: snes
+        tier: frontend
+    spec:
+      containers:
+      - name: snes-frontend
+        image: mreishus/snes-frontend
+        ports:
+        - containerPort: 80
+          protocol: TCP
