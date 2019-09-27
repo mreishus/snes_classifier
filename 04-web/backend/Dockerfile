@@ -1,16 +1,14 @@
 FROM continuumio/miniconda3
 
-
-RUN apt update
-RUN apt install -y python3-dev gcc
+RUN apt-get update && apt-get install -y python3-dev gcc && apt-get autoclean && apt-get autoremove -y
 
 # Install pytorch and fastai
-RUN conda install -c pytorch pytorch-cpu torchvision \
+RUN conda install --yes -c pytorch pytorch-cpu torchvision \
     && conda clean -afy \
     && find /opt/conda/ -follow -type f -name '*.a' -delete \
     && find /opt/conda/ -follow -type f -name '*.pyc' -delete \
     && find /opt/conda/ -follow -type f -name '*.js.map' -delete
-RUN conda install -c fastai fastai \
+RUN conda install --yes -c fastai fastai \
     && conda clean -afy \
     && find /opt/conda/ -follow -type f -name '*.a' -delete \
     && find /opt/conda/ -follow -type f -name '*.pyc' -delete \
@@ -18,6 +16,8 @@ RUN conda install -c fastai fastai \
 
 # Install starlette and uvicorn
 RUN pip install starlette uvicorn python-multipart aiohttp
+
+RUN apt-get --purge autoremove -y python3-dev gcc
 
 ADD server.py server.py
 ADD export.pkl export.pkl
