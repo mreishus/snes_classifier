@@ -1,23 +1,25 @@
-FROM continuumio/miniconda3
-
-RUN apt-get update && apt-get install -y python3-dev gcc && apt-get autoclean && apt-get autoremove -y
+FROM frolvlad/alpine-miniconda3
+# See git history for a continuumio/miniconda3 version
+# slightly larger
 
 # Install pytorch and fastai
 RUN conda install --yes -c pytorch pytorch-cpu torchvision \
-    && conda clean -afy \
+    && conda clean -tipsy \
     && find /opt/conda/ -follow -type f -name '*.a' -delete \
     && find /opt/conda/ -follow -type f -name '*.pyc' -delete \
     && find /opt/conda/ -follow -type f -name '*.js.map' -delete
 RUN conda install --yes -c fastai fastai \
-    && conda clean -afy \
+    && conda clean -tipsy \
     && find /opt/conda/ -follow -type f -name '*.a' -delete \
     && find /opt/conda/ -follow -type f -name '*.pyc' -delete \
     && find /opt/conda/ -follow -type f -name '*.js.map' -delete
 
 # Install starlette and uvicorn
-RUN pip install starlette uvicorn python-multipart aiohttp
-
-RUN apt-get --purge autoremove -y python3-dev gcc
+RUN conda install --yes -c conda-forge starlette uvicorn python-multipart aiohttp \
+    && conda clean -tipsy \
+    && find /opt/conda/ -follow -type f -name '*.a' -delete \
+    && find /opt/conda/ -follow -type f -name '*.pyc' -delete \
+    && find /opt/conda/ -follow -type f -name '*.js.map' -delete
 
 ADD server.py server.py
 ADD export.pkl export.pkl
