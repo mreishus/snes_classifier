@@ -19,3 +19,11 @@ docker rmi -f (docker images -f "dangling=true" -q)
 Stop an image from autostarting on boot
 docker update --restart=no web_backend_1
 
+*** Upload to docker hub ****
+
+docker build --tag=mreishus/snes-backend .
+docker push mreishus/snes-backend
+
+docker build --tag=mreishus/snes-frontend .
+docker push mreishus/snes-frontend
+

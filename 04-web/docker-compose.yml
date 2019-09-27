@@ -1,13 +1,13 @@
 version: '3'
 
 services:
-    frontend:
+    snes-frontend:
         build: ./frontend/
         restart: 'no'
         ports:
           - 8080:80
 
-    backend:
+    snes-backend:
         build: ./backend/
         restart: 'no'
 #        ports:
