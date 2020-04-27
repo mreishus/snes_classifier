@@ -4,7 +4,7 @@
   "proxy": "http://localhost:8000",
   "private": true,
   "dependencies": {
-    "prettier": "^2.0.4",
+    "prettier": "^2.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-dropzone": "^10.2.2",
