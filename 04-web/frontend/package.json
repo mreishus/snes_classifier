@@ -5,7 +5,7 @@
   "private": true,
   "dependencies": {
     "prettier": "^2.0.4",
-    "react": "^16.13.1",
+    "react": "^16.14.0",
     "react-dom": "^16.13.1",
     "react-dropzone": "^10.2.2",
     "react-scripts": "3.4.1"
