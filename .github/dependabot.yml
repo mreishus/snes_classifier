@@ -1,0 +1,21 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/04-web/frontend"
+  schedule:
+    interval: monthly
+    time: "07:07"
+    timezone: US/Central
+  open-pull-requests-limit: 10
+  assignees:
+  - mreishus
+  ignore:
+  - dependency-name: react-dropzone
+    versions:
+    - 11.2.4
+  - dependency-name: react-scripts
+    versions:
+    - 4.0.1
+  - dependency-name: elliptic
+    versions:
+    - 6.5.3
